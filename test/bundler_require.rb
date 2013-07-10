@@ -5,3 +5,5 @@ Bundler.require
 require_relative "../lib/multi_test"
 MultiTest.disable_autorun
 
+require 'minitest/autorun' if defined?(Minitest)
+
