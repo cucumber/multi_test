@@ -5,6 +5,18 @@ module MultiTest
     end
 
     if defined?(Minitest)
+      Minitest.instance_eval do
+        def run(*)
+          # propagate the exit code from cucumber or another runner
+          case $!
+          when SystemExit
+            $!.status
+          else
+            true
+          end
+        end
+      end
+
       if defined?(Minitest::Unit)
         Minitest::Unit.class_eval do
           def run(*)
