@@ -28,6 +28,9 @@ module MultiTest
   end
 
   def self.extend_with_best_assertion_library(object)
-    AssertionLibrary.detect_best.extend_world(object)
+   best_library = AssertionLibrary.detect_best
+    if best_library
+      best_library.extend_world(object)
+    end
   end
 end
