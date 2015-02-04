@@ -1,5 +1,9 @@
 # Imagine this is your rails app
-require 'test/unit'
+if RUBY_VERSION =~ /^2\.2/
+
+else
+  require 'test/unit'
+end
 
 # Now cucumber loads
 require "multi_test"
