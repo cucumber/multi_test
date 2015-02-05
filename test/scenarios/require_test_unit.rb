@@ -1,8 +1,10 @@
 # Imagine this is your rails app
-if RUBY_VERSION =~ /^2\.2/
 
-else
+# Some ruby versions do not include 'test/unit' stdlib.
+begin
   require 'test/unit'
+rescue LoadError => _
+
 end
 
 # Now cucumber loads
