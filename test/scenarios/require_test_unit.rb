@@ -1,5 +1,11 @@
 # Imagine this is your rails app
-require 'test/unit'
+
+# Some ruby versions do not include 'test/unit' stdlib.
+begin
+  require 'test/unit'
+rescue LoadError => _
+
+end
 
 # Now cucumber loads
 require "multi_test"
