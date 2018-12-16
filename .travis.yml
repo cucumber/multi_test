@@ -8,7 +8,7 @@ rvm:
 script: make
 matrix:
   include:
-    - rvm: jruby
+    - rvm: jruby-9.2.5.0
       env: EXCLUDED_DIRS="activesupport-5.0.0"
   allow_failures:
     - rvm: ruby-head
