@@ -4,3 +4,4 @@ pkg/*.*
 *.swo
 *.swn
 *.bundle
+test/gemfiles/*/Gemfile.lock
