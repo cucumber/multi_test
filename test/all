@@ -9,6 +9,11 @@
 require 'fileutils'
 require 'open3'
 
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+YELLOW="\033[1;33m"
+NC="\033[0m"
+
 InvalidEnvironment = Class.new(StandardError)
 
 def main
@@ -89,23 +94,23 @@ end
 
 def run_cmd(cmd, result_file)
   puts cmd
-  stderr, stdout, is_ok = Open3.capture3(cmd)
-  puts stderr, stdout
+  stdout, stderr, is_ok = Open3.capture3(cmd)
+  puts "#{RED}#{stderr}#{NC}", stdout
   if /Ruby version/.match?(stderr)
-    puts "=> SKIP: Invalid environment"
+    puts "#{YELLOW}=> ⏩ SKIP: Invalid environment#{NC}"
     raise InvalidEnvironment
   end
   result = File.read(result_file)
   unless result.empty?
-    puts '=> FAIL: Expected empty output but was:'
+    puts "#{RED}=> 🛑 FAIL: Expected empty output but was:#{NC}"
     puts "--#{result}--"
     raise RuntimeError
   end
   unless is_ok
-    puts '=> FAIL: Expected zero exit status'
+    puts "#{RED}=> 🛑 FAIL: Expected zero exit status#{NC}"
     raise RuntimeError
   end
-  puts '=> PASS'
+  puts "#{GREEN}=> ✅ PASS#{NC}"
 end
 
 exit_status = main
