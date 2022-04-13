@@ -80,7 +80,8 @@ def run_scenario(gemfile_dir, scenario)
   result_file = 'test.result.log'
   cmd = <<-EOF
 export BUNDLE_GEMFILE=#{gemfile} && \
-bundle install --path #{bundle_path_dir} && \
+export BUNDLE_PATH=#{bundle_path_dir} && \
+bundle install && \
 bundle exec ruby -I lib #{scenario} > #{result_file}
   EOF
   run_cmd(cmd, result_file)
