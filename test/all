@@ -83,6 +83,7 @@ export BUNDLE_GEMFILE=#{gemfile} && \
 export BUNDLE_PATH=#{bundle_path_dir} && \
 bundle install --no-cache
   EOF
+  puts install_cmd
   if !system(install_cmd)
     puts "=> SKIP: Invalid environment"
     raise InvalidEnvironment
@@ -96,6 +97,7 @@ bundle exec ruby -I lib #{scenario} > #{result_file}
 end
 
 def run_cmd(cmd, result_file)
+  puts cmd
   is_ok = system(cmd)
   result = File.read(result_file)
   unless result.empty?
