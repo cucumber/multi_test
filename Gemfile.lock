@@ -1,0 +1,18 @@
+PATH
+  remote: .
+  specs:
+    multi_test (0.1.2)
+
+GEM
+  specs:
+    rake (13.0.6)
+
+PLATFORMS
+  arm64-darwin-20
+
+DEPENDENCIES
+  multi_test!
+  rake
+
+BUNDLED WITH
+   2.2.17
