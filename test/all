@@ -100,6 +100,10 @@ def run_cmd(cmd, result_file)
     puts "#{YELLOW}=> ⏩ SKIP: Invalid environment#{NC}"
     raise InvalidEnvironment
   end
+  if /Bundler::GemNotFound/.match(stderr)
+    puts "#{RED}=> 🛑 FAIL: Could not install gems#{NC}"
+    raise RuntimeError
+  end
   result = File.read(result_file)
   unless result.empty?
     puts "#{RED}=> 🛑 FAIL: Expected empty output but was:#{NC}"
