@@ -16,13 +16,7 @@ jobs:
         os: [ubuntu-latest]
         ruby: ["2.6", "2.7", "3.0", "3.1"]
         gemfile: ["activesupport-4", "minitest-4"]
-        scenario: []
-        include:
-          - gemfile: "activesupport-4"
-          - scenario: "require_activesupport_testing_autorun.rb"
-        include:
-          - gemfile: "activesupport-4"
-          - scenario: "minitest_assertions.rb"
+        scenario: ["require_activesupport_testing_autorun.rb"]
 
     runs-on: ${{ matrix.os }}
     steps:
