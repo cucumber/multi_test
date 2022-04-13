@@ -13,13 +13,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest]
         ruby: ["2.6", "2.7", "3.0", "3.1"]
+        gemfile: ["activesupport-4", "minitest-4"]
+        scenario: []
         include:
-          - os: ubuntu-latest
-            ruby: jruby-9.3
-          - os: ubuntu-latest
-            ruby: truffleruby-head
+          - gemfile: "activesupport-4"
+          - scenario: "require_activesupport_testing_autorun.rb"
+        include:
+          - gemfile: "activesupport-4"
+          - scenario: "minitest_assertions.rb"
 
     runs-on: ${{ matrix.os }}
     steps:
