@@ -30,7 +30,7 @@ runs:
           echo "Expected no output but got:"
           cat output.log
           exit 1
-        end
+        fi
       env:
         BUNDLE_GEMFILE: test/gemfiles/${{ matrix.gemfile }}/Gemfile
       shell: bash
