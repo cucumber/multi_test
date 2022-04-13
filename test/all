@@ -81,6 +81,7 @@ def run_scenario(gemfile_dir, scenario)
   install_cmd = <<-EOF
 export BUNDLE_GEMFILE=#{gemfile} && \
 export BUNDLE_PATH=#{bundle_path_dir} && \
+bundle clean --force && \
 bundle install --no-cache
   EOF
   puts install_cmd
