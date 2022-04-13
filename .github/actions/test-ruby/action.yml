@@ -21,9 +21,9 @@ runs:
       run: bundle config list
       shell: bash
 
-    - name: Run test scenario $(matrix.scenario)
+    - name: Run test scenario ${{ matrix.scenario }}
       run: |
-        bundle exec ruby -I lib test/scenarios/${matrix.scenario} > output.log
+        bundle exec ruby -I lib test/scenarios/${{ matrix.scenario }} > output.log
         if [[ -s output.log ]]; then
           echo "Expected no output but got:"
           cat output.log
