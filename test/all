@@ -10,33 +10,32 @@ require 'fileutils'
 
 def main
   exit_status = 0
-  begin
-    a_gemfile_dir = specified_gemfile_dir
+  failures = []
+  a_gemfile_dir = specified_gemfile_dir
 
-    gemfile_pattern = File.join('test', 'gemfiles', '*')
-    gemfile_dirs = Dir.glob(gemfile_pattern)
+  gemfile_pattern = File.join('test', 'gemfiles', '*')
+  gemfile_dirs = Dir.glob(gemfile_pattern)
 
-    puts(gemfile_dirs)
-    gemfile_dirs.each do |gemfile_dir|
-      next if a_gemfile_dir && !gemfile_dir.include?(a_gemfile_dir)
-      next if gemfile_dir_excluded?(gemfile_dir)
-      File.open("#{gemfile_dir}/scenarios") do |f|
-        f.each_line do |scenario|
-          scenario.chomp!
-          next if scenario.empty?
-          begin
-            run_scenario(gemfile_dir, "test/scenarios/#{scenario}")
-          rescue
-            exit_status = 1
-          end
+  puts(gemfile_dirs)
+  gemfile_dirs.each do |gemfile_dir|
+    next if a_gemfile_dir && !gemfile_dir.include?(a_gemfile_dir)
+    next if gemfile_dir_excluded?(gemfile_dir)
+    File.open("#{gemfile_dir}/scenarios") do |f|
+      f.each_line do |scenario|
+        scenario.chomp!
+        next if scenario.empty?
+        begin
+          run_scenario(gemfile_dir, "test/scenarios/#{scenario}")
+        rescue
+          failures << "#{gemfile_dir} test/scenarios/#{scenario}"
         end
       end
     end
-  rescue
-    exit_status = 1
   end
-  puts exit_status.zero? ? 'Done sucessfully.' : 'Done with failure.'
-  exit_status
+  puts
+  puts failures.any? ? "Done with #{failures.length} failure(s):" : "Success!"
+  puts failures.map { |failure| " * #{failure}" }
+  return failures.length
 end
 
 def specified_gemfile_dir
