@@ -78,29 +78,30 @@ def run_scenario(gemfile_dir, scenario)
   bundle_path_dir = File.join('vendor', 'bundle')
   FileUtils.rm_rf(bundle_path_dir) if Dir.exist?(bundle_path_dir)
   result_file = 'test.result.log'
+  install_cmd = <<-EOF
+export BUNDLE_GEMFILE=#{gemfile} && \
+export BUNDLE_PATH=#{bundle_path_dir} && \
+bundle install --no-cache
+  EOF
+  if !system(install_cmd)
+    puts "=> SKIP: Invalid environment"
+    raise InvalidEnvironment
+  end
   cmd = <<-EOF
 export BUNDLE_GEMFILE=#{gemfile} && \
 export BUNDLE_PATH=#{bundle_path_dir} && \
-bundle update && \
-bundle install --no-cache && \
 bundle exec ruby -I lib #{scenario} > #{result_file}
   EOF
   run_cmd(cmd, result_file)
 end
 
 def run_cmd(cmd, result_file)
-  stdout, stderr, is_ok = Open3.capture3(cmd)
-  puts stdout
-  puts stderr
+  is_ok = system(cmd)
   result = File.read(result_file)
   unless result.empty?
     puts '=> FAIL: Expected empty output but was:'
     puts "--#{result}--"
     raise RuntimeError
-  end
-  if stderr.length > 0 && /Your Ruby version is/.match?(stderr)
-    puts "=> SKIP: Invalid environment"
-    raise InvalidEnvironment
   end
   unless is_ok
     puts '=> FAIL: Expected zero exit status'
