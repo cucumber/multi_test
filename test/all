@@ -89,6 +89,8 @@ end
 
 def run_cmd(cmd, result_file)
   stdout, stderr, is_ok = Open3.capture3(cmd)
+  puts stdout
+  puts stderr
   result = File.read(result_file)
   unless result.empty?
     puts '=> FAIL: Expected empty output but was:'
@@ -96,7 +98,6 @@ def run_cmd(cmd, result_file)
     raise RuntimeError
   end
   if stderr.length > 0 && /Your Ruby version is/.match?(stderr)
-    puts stderr
     puts "=> SKIP: Invalid environment"
     raise InvalidEnvironment
   end
