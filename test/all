@@ -71,18 +71,17 @@ def gemfile_dir_excluded?(gemfile_dir)
 end
 
 def run_scenario(gemfile_dir, scenario)
-  gemfile = File.join(gemfile_dir, 'Gemfile')
+  gemfile = File.expand_path(File.join(gemfile_dir, 'Gemfile'))
   puts ''
   puts "Testing scenario #{scenario} with #{gemfile}..."
 
-  bundle_path_dir = File.join('vendor', 'bundle')
+  bundle_path_dir = File.expand_path(File.join(gemfile_dir, 'vendor', 'bundle'))
   FileUtils.rm_rf(bundle_path_dir) if Dir.exist?(bundle_path_dir)
   result_file = 'test.result.log'
   install_cmd = <<-EOF
 export BUNDLE_GEMFILE=#{gemfile} && \
-export BUNDLE_PATH=#{bundle_path_dir} && \
-bundle clean --force && \
-bundle install --no-cache
+bundle config set --local path '#{bundle_path_dir}' && \
+bundle install
   EOF
   puts install_cmd
   if !system(install_cmd)
