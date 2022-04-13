@@ -17,8 +17,8 @@ runs:
         bundler-cache: false
         cache-version: 1
 
-    - name: Dump bundler config
-      run: bundle config list
+    - name: Install gems
+      run: bundle install --gemfile=test/gemfiles/${{ matrix.gemfile }}/Gemfile
       shell: bash
 
     - name: Run test scenario ${{ matrix.scenario }}
