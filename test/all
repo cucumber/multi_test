@@ -96,7 +96,8 @@ end
 def run_cmd(cmd, result_file)
   puts cmd
   stdout, stderr, is_ok = Open3.capture3(cmd)
-  puts "#{RED}#{stderr}#{NC}", stdout
+  puts stdout
+  puts "#{RED}#{stderr}#{NC}"
   if /Ruby version/.match?(stderr)
     puts "#{YELLOW}=> ⏩ SKIP: Invalid environment#{NC}"
     raise InvalidEnvironment
