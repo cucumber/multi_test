@@ -86,6 +86,7 @@ def run_scenario(gemfile_dir, scenario)
   cmd = <<-EOF
 export BUNDLE_GEMFILE=#{gemfile} && \
 export BUNDLE_PATH=#{bundle_path_dir} && \
+bundle config list && \
 bundle install --redownload && \
 bundle exec ruby -I lib #{scenario} > #{result_file}
   EOF
