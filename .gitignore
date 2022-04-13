@@ -6,3 +6,4 @@ pkg/*.*
 *.bundle
 test/gemfiles/*/Gemfile.lock
 Gemfile.lock
+.DS_Store
