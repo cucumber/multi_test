@@ -18,7 +18,9 @@ runs:
         cache-version: 1
 
     - name: Install gems
-      run: bundle install --gemfile=test/gemfiles/${{ matrix.gemfile }}/Gemfile
+      run: bundle install
+      env:
+        BUNDLE_GEMFILE: test/gemfiles/${{ matrix.gemfile }}/Gemfile
       shell: bash
 
     - name: Run test scenario ${{ matrix.scenario }}
@@ -29,4 +31,6 @@ runs:
           cat output.log
           exit 1
         end
+      env:
+        BUNDLE_GEMFILE: test/gemfiles/${{ matrix.gemfile }}/Gemfile
       shell: bash
