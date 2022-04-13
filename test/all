@@ -90,7 +90,6 @@ bundle install
   end
   cmd = <<-EOF
 export BUNDLE_GEMFILE=#{gemfile} && \
-export BUNDLE_PATH=#{bundle_path_dir} && \
 bundle exec ruby -I lib #{scenario} > #{result_file}
   EOF
   run_cmd(cmd, result_file)
