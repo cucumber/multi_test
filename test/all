@@ -7,10 +7,14 @@
 # EXCLUDED_DIRS: "DIR1 DIR2 .."
 
 require 'fileutils'
+require 'open3'
+
+InvalidEnvironment = Class.new(StandardError)
 
 def main
   exit_status = 0
   failures = []
+  skipped = []
   a_gemfile_dir = specified_gemfile_dir
 
   gemfile_pattern = File.join('test', 'gemfiles', '*')
@@ -26,7 +30,9 @@ def main
         next if scenario.empty?
         begin
           run_scenario(gemfile_dir, "test/scenarios/#{scenario}")
-        rescue
+        rescue InvalidEnvironment
+          skipped << "#{gemfile_dir} test/scenarios/#{scenario}"
+        rescue RuntimeError
           failures << "#{gemfile_dir} test/scenarios/#{scenario}"
         end
       end
@@ -34,7 +40,10 @@ def main
   end
   puts
   puts failures.any? ? "Done with #{failures.length} failure(s):" : "Success!"
-  puts failures.map { |failure| " * #{failure}" }
+  puts failures.map { |test| " * #{test}" }
+  puts
+  puts skipped.any? ? "#{skipped.length} tests were skipped in this environment:" : ""
+  puts skipped.map { |test| " * #{test}" }
   return failures.length
 end
 
@@ -79,13 +88,17 @@ bundle exec ruby -I lib #{scenario} > #{result_file}
 end
 
 def run_cmd(cmd, result_file)
-  puts cmd
-  is_ok = system(cmd)
+  stdout, stderr, is_ok = Open3.capture3(cmd)
   result = File.read(result_file)
   unless result.empty?
     puts '=> FAIL: Expected empty output but was:'
     puts "--#{result}--"
     raise RuntimeError
+  end
+  if stderr.length > 0 && /Your Ruby version is/.match?(stderr)
+    puts stderr
+    puts "=> SKIP: Invalid environment"
+    raise InvalidEnvironment
   end
   unless is_ok
     puts '=> FAIL: Expected zero exit status'
