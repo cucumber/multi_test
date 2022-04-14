@@ -1,5 +1,1 @@
 _extends: .github
-
-repository:
-  name: multi_test
-  description: Help Cucumber-Ruby pick a good default assertion framework
