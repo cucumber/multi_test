@@ -2,4 +2,4 @@ _extends: .github
 
 repository:
   name: multi_test
-  description: Helps cucumber-ruby pick a good default assertion framework
+  description: Help Cucumber-Ruby pick a good default assertion framework
