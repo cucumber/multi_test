@@ -3,11 +3,12 @@
 This project gives you a uniform interface onto whatever testing library has been
 loaded into a running Ruby process.
 
-We use this within the Cucumber project to clobber autorun behaviour from older 
-versions of `Test::Unit` that automatically hook in when the user requires them.
+We use this within cucumber-ruby to discover and auto-load your favourite assertion library
 
 Example:
 ~~~ruby
 require 'multi_test'
-MultiTest.disable_autorun
+
+my_tests = Object.new
+MultiTest.extend_with_best_assertion_library(my_tests)
 ~~~
