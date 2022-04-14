@@ -16,13 +16,18 @@ jobs:
         os: [ubuntu-latest]
         ruby: ["2.6", "2.7", "3.0", "3.1"]
         gemfile: ["activesupport-4", "minitest-4"]
-        scenario: ["require_activesupport_testing_autorun.rb"]
 
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run ruby tests
-        uses: ./.github/actions/test-ruby
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
+          bundler-cache: false
+
+      - name: Run test scenarios
+        run: |
+          ./test-gemfile test/gemfiles/${{ matrix.gemfile }}
+        shell: bash
