@@ -14,7 +14,9 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
 
   s.rubygems_version = ">= 1.6.1"
-  s.files            = `git ls-files`.split("\n").reject {|path| path =~ /\.gitignore$/ }
+  s.files            = `git ls-files`.split("\n").
+    reject { |path| path =~ /\.gitignore$/ }.
+    reject { |path| path =~ /^test\// }
   s.test_files       = `git ls-files -- {gemfiles,test}/*`.split("\n")
   s.rdoc_options     = ["--charset=UTF-8"]
   s.require_path     = "lib"

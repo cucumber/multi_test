@@ -7,3 +7,13 @@ The gemfiles contain each of the different gem configurations we want to test wi
 Success for each test case is:
 1. nothing was written to standard output
 2. the Ruby script exited with status 0 (i.e. no exception was raised)
+
+## Running tests
+
+Use this command (from the root) to run all the tests:
+
+		./test-all
+
+Use this command to run a specific Gemfile's scenarios:
+
+		./test-gemfile test/gemfile/<gemfile folder>
