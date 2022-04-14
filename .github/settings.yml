@@ -1,5 +1,5 @@
 _extends: .github
 
 repository:
-  name: html-formatter
-  description: HTML formatter for reporting Cucumber results
+  name: multi_test
+  description: Help Cucumber-Ruby pick a good default assertion framework
