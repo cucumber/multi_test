@@ -3,7 +3,7 @@ $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'multi_test'
-  s.version     = '0.1.2'
+  s.version     = File.read(File.join(File.expand_path(__dir__),'VERSION'))
   s.authors     = ["Matt Wynne", "Steve Tooke"]
   s.description = 'Wafter-thin gem to help control rogue test/unit/autorun requires'
   s.summary     = "multi-test-#{s.version}"
