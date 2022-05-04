@@ -8,7 +8,7 @@ Please see [CONTRIBUTING.md](https://github.com/cucumber/cucumber/blob/master/CO
 
 ### Removed
 
-* Drop support for ruby > 2.0
+* Drop support for ruby < 2.0
   ([PR#28](https://github.com/cucumber/multi_test/pull/28))
 
 ## [v0.1.2](https://github.com/cucumber/multi_test/compare/v0.1.1...v0.1.2)
