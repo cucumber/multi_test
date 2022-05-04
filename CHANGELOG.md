@@ -14,8 +14,6 @@ Please see [CONTRIBUTING.md](https://github.com/cucumber/cucumber/blob/master/CO
 * Drop support for ruby < 2.0
   ([PR#28](https://github.com/cucumber/multi_test/pull/28))
 
-### Removed
-
 * Removed `disable_autorun`
   ([PR#30](https://github.com/cucumber/multi_test/pull/30)
    [Issue#26](https://github.com/cucumber/multi_test/issues/26))
