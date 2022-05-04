@@ -8,6 +8,9 @@ Please see [CONTRIBUTING.md](https://github.com/cucumber/cucumber/blob/master/CO
 
 ### Removed
 
+* Remove test files from the gem to prevent false-positive with security scanners
+  as reported in [#21](https://github.com/cucumber/multi_test/issues/21)
+
 * Drop support for ruby < 2.0
   ([PR#28](https://github.com/cucumber/multi_test/pull/28))
 
