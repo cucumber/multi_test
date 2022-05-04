@@ -6,6 +6,10 @@ Please see [CONTRIBUTING.md](https://github.com/cucumber/cucumber/blob/master/CO
 
 * As per [#251](https://github.com/cucumber/cucumber/issues/251): renamed History.md to CHANGELOG.md, added contributing message at beginning, and other formatting. ([#12](https://github.com/cucumber/multi_test/pull/12) [jaysonesmith](https://github.com/jaysonesmith/))
 
+### Removed
+
+* Drop support for ruby > 2.0
+  ([PR#28](https://github.com/cucumber/multi_test/pull/28))
 
 ## [v0.1.2](https://github.com/cucumber/multi_test/compare/v0.1.1...v0.1.2)
 
