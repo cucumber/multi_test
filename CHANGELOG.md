@@ -11,6 +11,9 @@ Please see [CONTRIBUTING.md](https://github.com/cucumber/cucumber/blob/master/CO
 * Remove test files from the gem to prevent false-positive with security scanners
   as reported in [#21](https://github.com/cucumber/multi_test/issues/21)
 
+* Drop support for ruby < 2.0
+  ([PR#28](https://github.com/cucumber/multi_test/pull/28))
+
 ## [v0.1.2](https://github.com/cucumber/multi_test/compare/v0.1.1...v0.1.2)
 
 * Ensure that detecting assetion library doesn't fail if no test framework

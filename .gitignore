@@ -7,3 +7,4 @@ pkg/*.*
 /Gemfile.lock
 test/**/Gemfile.lock
 .DS_Store
+*.gem
