@@ -13,7 +13,8 @@ Gem::Specification.new do |s|
 
   s.platform    = Gem::Platform::RUBY
 
-  s.rubygems_version = ">= 1.6.1"
+  s.required_ruby_version = ">= 2.0"
+  s.required_rubygems_version = ">= 1.6.1"
   s.files            = `git ls-files`.split("\n").
     reject { |path| path =~ /\.gitignore$/ }.
     reject { |path| path =~ /^test\// }
