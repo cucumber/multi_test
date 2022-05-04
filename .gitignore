@@ -5,4 +5,5 @@ pkg/*.*
 *.swn
 *.bundle
 /Gemfile.lock
+**/gemfile.lock
 .DS_Store
