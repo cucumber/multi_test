@@ -14,6 +14,12 @@ Please see [CONTRIBUTING.md](https://github.com/cucumber/cucumber/blob/master/CO
 * Drop support for ruby < 2.0
   ([PR#28](https://github.com/cucumber/multi_test/pull/28))
 
+### Removed
+
+* Removed `disable_autorun`
+  ([PR#30](https://github.com/cucumber/multi_test/pull/30)
+   [Issue#26](https://github.com/cucumber/multi_test/issues/26))
+
 ## [v0.1.2](https://github.com/cucumber/multi_test/compare/v0.1.1...v0.1.2)
 
 * Ensure that detecting assetion library doesn't fail if no test framework
