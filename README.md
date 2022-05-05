@@ -1,4 +1,5 @@
 [![Tests](https://github.com/cucumber/multi_test/actions/workflows/test-ruby.yml/badge.svg)](https://github.com/cucumber/multi_test/actions/workflows/test-ruby.yml)
+[![Gem Version](https://badge.fury.io/rb/multi_test.svg)](https://badge.fury.io/rb/multi_test)
 
 This project gives you a uniform interface onto whatever testing library has been
 loaded into a running Ruby process.
