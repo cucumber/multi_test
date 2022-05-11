@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 ### Added
-- `MultiTest.disable_autorun` is back again! ((#33)[https://github.com/cucumber/multi_test/issues/33] (#26)[https://github.com/cucumber/multi_test/issues/26])
+- `MultiTest.disable_autorun` is back again! (#33)[https://github.com/cucumber/multi_test/issues/33] (#26)[https://github.com/cucumber/multi_test/issues/26]
 
 ## [1.0.0] - 2022-05-04
 ### Changed
