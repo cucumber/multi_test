@@ -1,10 +1,12 @@
 # Changelog
 
 ## [Unreleased]
+
+## [1.1.0] - 2022-05-11
 ### Added
 - `MultiTest.disable_autorun` is back again!
-  ([#33](https://github.com/cucumber/multi_test/issues/33)
-   [#26](https://github.com/cucumber/multi_test/issues/26))
+([#33](https://github.com/cucumber/multi_test/issues/33)
+[#26](https://github.com/cucumber/multi_test/issues/26))
 
 ## [1.0.0] - 2022-05-04
 ### Changed
@@ -41,6 +43,7 @@ included. Ruby 2.2 removed minitest from standard library. (@tooky, @jmoody)
 - First gem release
 
 [Unreleased]: https://github.com/cucumber/multi_test/compare/1.0.0..main
+[1.1.0]: https://github.com/cucumber/multi_test/compare/1.0.0..main
 [1.0.0]: https://github.com/cucumber/multi_test/compare/v0.1.2..main
 [0.1.2]: https://github.com/cucumber/multi_test/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/cucumber/multi_test/compare/v0.1.0...v0.1.1
