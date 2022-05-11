@@ -1,1 +1,2 @@
+require_activesupport_testing_autorun.rb
 minitest_assertions.rb
