@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.summary     = "multi-test-#{s.version}"
   s.email       = 'cukes@googlegroups.com'
   s.license     = 'MIT'
-  s.homepage    = "http://cukes.info"
+  s.homepage    = "https://cucumber.io/"
 
   s.platform    = Gem::Platform::RUBY
 
