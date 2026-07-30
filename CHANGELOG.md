@@ -15,6 +15,9 @@ This file is intended to be modified using the [`changelog`](https://github.com/
 - **BREAKING CHANGE**: Upped minimum `rspec` support from `1.0` to `2.0`
 - Ran a full aggressive rubocop audit on code to refactor into more modern ruby style
 
+### Fixed
+- Partially fixed the local execution of tests by not complaining when test frameworks output boilerplate responses
+
 ## [1.1.0] - 2022-05-11
 ### Added
 - `MultiTest.disable_autorun` is back again!

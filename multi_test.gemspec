@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = 'multi_test'
   s.version     = File.read(File.join(File.expand_path(__dir__), 'VERSION'))
   s.authors     = ['Matt Wynne', 'Steve Tooke']
-  s.description = 'Wafer-thin gem to help control rogue test/unit/autorun requires'
+  s.description = 'Wafer thin gem to help control rogue test/unit/autorun requires'
   s.summary     = "multi-test-#{s.version}"
   s.email       = 'cukes@googlegroups.com'
   s.homepage    = 'https://cucumber.io/'
