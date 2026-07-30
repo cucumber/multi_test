@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MultiTest
   module MinitestWorld
     def self.extended(base)
