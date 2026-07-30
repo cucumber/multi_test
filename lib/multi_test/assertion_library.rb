@@ -26,13 +26,6 @@ module MultiTest
 
     private
 
-    def self.null
-      AssertionLibrary.new(
-        proc { },
-        proc { }
-      )
-    end
-
     def self.available
       @available ||= [
         AssertionLibrary.new(
@@ -63,9 +56,11 @@ module MultiTest
           proc { require 'test/unit/assertions' },
           proc { |object| object.extend(Test::Unit::Assertions) }
         ),
-        # Null assertion library must come last to prevent exceptions if
-        # unable to load a test framework
-        AssertionLibrary.null
+        # Null assertion library must come last to prevent exceptions if unable to load a test framework
+        AssertionLibrary.new(
+          proc { },
+          proc { }
+        )
       ]
     end
   end
