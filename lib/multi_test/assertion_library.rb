@@ -58,11 +58,10 @@ module MultiTest
         ),
         # Null assertion library must come last to prevent exceptions if unable to load a test framework
         AssertionLibrary.new(
-          proc { },
-          proc { }
+          proc {},
+          proc {}
         )
       ]
     end
   end
 end
-
