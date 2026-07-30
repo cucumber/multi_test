@@ -1,5 +1,12 @@
 # Changelog
 
+All notable changes to this project will be documented in this file. For older versions see the [changelog archive](./CHANGELOG.old.md)
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+This file is intended to be modified using the [`changelog`](https://github.com/cucumber/changelog) command-line tool.
+
 ## [Unreleased]
 
 ## [1.1.0] - 2022-05-11
@@ -23,8 +30,8 @@ as reported in [#21](https://github.com/cucumber/multi_test/issues/21)
 
 ## [0.1.2]
 ### Changed
-- Ensure that detecting assetion library doesn't fail if no test framework
-included. Ruby 2.2 removed minitest from standard library. (@tooky, @jmoody)
+- Ensure that detecting assertion library doesn't fail if no test framework
+included. Ruby `2.2` removed minitest from standard library. (@tooky, @jmoody)
 
 ## [0.1.1]
 ### Removed
@@ -32,7 +39,7 @@ included. Ruby 2.2 removed minitest from standard library. (@tooky, @jmoody)
 
 ## [0.1.0]
 ### Added
-- Detect best available assertion library for cucumber (@tooky)
+- Detect the best available assertion library for cucumber (@tooky)
 
 ## [0.0.3]
 ### Fixed
@@ -42,9 +49,9 @@ included. Ruby 2.2 removed minitest from standard library. (@tooky, @jmoody)
 ### Changed
 - First gem release
 
-[Unreleased]: https://github.com/cucumber/multi_test/compare/1.0.0..main
-[1.1.0]: https://github.com/cucumber/multi_test/compare/1.0.0..main
-[1.0.0]: https://github.com/cucumber/multi_test/compare/v0.1.2..main
+[Unreleased]: https://github.com/cucumber/multi_test/compare/1.1.0..HEAD
+[1.1.0]: https://github.com/cucumber/multi_test/compare/1.0.0..1.1.0
+[1.0.0]: https://github.com/cucumber/multi_test/compare/v0.1.2..1.0.0
 [0.1.2]: https://github.com/cucumber/multi_test/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/cucumber/multi_test/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/cucumber/multi_test/compare/v0.0.3...v0.1.0
