@@ -7,13 +7,15 @@ Gem::Specification.new do |s|
   s.description = 'Wafer-thin gem to help control rogue test/unit/autorun requires'
   s.summary     = "multi-test-#{s.version}"
   s.email       = 'cukes@googlegroups.com'
-  s.license     = 'MIT'
   s.homepage    = "https://cucumber.io/"
 
-  s.platform    = Gem::Platform::RUBY
+  s.license     = 'MIT'
 
   s.required_ruby_version = ">= 2.7"
   s.required_rubygems_version = ">= 1.6.1"
-  s.files            = Dir['lib/**/*', 'CHANGELOG.md', 'LICENSE', 'README.md']
+
+  s.add_development_dependency('rubocop', '~> 1.40.0')
+
   s.require_path     = "lib"
+  s.files            = Dir['lib/**/*', 'CHANGELOG.md', 'LICENSE', 'README.md']
 end
