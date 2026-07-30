@@ -4,7 +4,7 @@ require 'English'
 require 'multi_test/assertion_library'
 module MultiTest
   def self.disable_autorun
-    Test::Unit::Runner.module_eval('@@stop_auto_run = true') if defined?(Test::Unit::Runner)
+    Test::Unit::Runner.module_eval('@@stop_auto_run = true', __FILE__, __LINE__) if defined?(Test::Unit::Runner)
 
     return unless defined?(Minitest)
 
