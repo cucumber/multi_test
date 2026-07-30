@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 2.6
   NewCops: enable
 
 # Stylistic preference to keep dev dependencies in gemspec
@@ -13,13 +13,5 @@ Gemspec/RequireMFA:
 Layout/LineLength:
   Max: 200
 
-# This allows us to read the chmod action in a more reproducible way
-Style/NumericLiteralPrefix:
-  EnforcedOctalStyle: zero_only
-
 Style/Documentation:
   Enabled: false
-
-Style/RegexpLiteral:
-  EnforcedStyle: slashes
-  AllowInnerSlashes: true
