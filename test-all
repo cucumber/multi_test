@@ -3,5 +3,5 @@
 set -e
 
 for gemfile in test/gemfiles/*; do
-	./test-gemfile $gemfile
+    ./test-gemfile $gemfile
 done
