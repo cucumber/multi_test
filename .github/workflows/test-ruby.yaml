@@ -49,6 +49,8 @@ jobs:
           # False failures to be Investigated
           - gemfile: activesupport-5
           - gemfile: activesupport-6
+          - gemfile: activesupport-7
+          - gemfile: activesupport-8
           # MiniTest
             # Unsupported versions of Ruby
           - ruby: '2.6'
@@ -61,6 +63,7 @@ jobs:
             gemfile: minitest-6
           # False failures to be Investigated
           - gemfile: minitest-5
+          - gemfile: minitest-6
 
     runs-on: ubuntu-24.04
     steps:
