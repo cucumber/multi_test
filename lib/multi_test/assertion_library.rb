@@ -14,12 +14,10 @@ module MultiTest
     end
 
     def require?
-      begin
-        @requirer.call
-        true
-      rescue LoadError
-        false
-      end
+      @requirer.call
+      true
+    rescue LoadError
+      false
     end
 
     def extend_world(world)

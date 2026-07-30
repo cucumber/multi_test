@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'English'
 require 'multi_test/assertion_library'
 module MultiTest
   def self.disable_autorun
@@ -9,9 +10,9 @@ module MultiTest
       Minitest.instance_eval do
         def run(*)
           # propagate the exit code from cucumber or another runner
-          case $!
+          case $ERROR_INFO
           when SystemExit
-            $!.status
+            $ERROR_INFO.status
           else
             true
           end
