@@ -41,7 +41,7 @@ module MultiTest
             require 'ostruct'
           },
           proc { |object|
-            options = OpenStruct.new(:diff_format => :unified, :context_lines => 3)
+            options = OpenStruct.new(diff_format: :unified, context_lines: 3)
             Spec::Expectations.differ = Spec::Expectations::Differs::Default.new(options)
             object.extend(Spec::Matchers)
           }
