@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 This file is intended to be modified using the [`changelog`](https://github.com/cucumber/changelog) command-line tool.
 
 ## [Unreleased]
+### Changed
+- **BREAKING CHANGE**: Upped minimum ruby from `2.0` to `2.6`
+- **BREAKING CHANGE**: Upped minimum `minitest` support from `2.0` to `5.0`
+- **BREAKING CHANGE**: Removed all minitest autorun shims
+- **BREAKING CHANGE**: Upped minimum `rspec` support from `1.0` to `2.0`
+- Ran a full aggressive rubocop audit on code to refactor into more modern ruby style
 
 ## [1.1.0] - 2022-05-11
 ### Added
