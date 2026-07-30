@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.7"
   s.required_rubygems_version = ">= 1.6.1"
 
-  s.add_development_dependency('rubocop', '~> 1.40.0')
+  s.add_development_dependency('rubocop', '~> 1.57.0')
 
   s.require_path     = "lib"
   s.files            = Dir['lib/**/*', 'CHANGELOG.md', 'LICENSE', 'README.md']
