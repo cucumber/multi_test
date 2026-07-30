@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'multi_test/minitest_world'
 
 module MultiTest

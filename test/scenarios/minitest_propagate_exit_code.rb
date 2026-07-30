@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 # Imagine this is your rails app
 require 'minitest/autorun'
 
 # Now cucumber loads and exits successfully
-require "multi_test"
+require 'multi_test'
 MultiTest.disable_autorun
 exit 0
 
