@@ -28,40 +28,64 @@ module MultiTest
 
     def self.available
       @available ||= [
-        AssertionLibrary.new(
-          proc { require 'rspec/expectations' },
-          proc { |object| object.extend(::RSpec::Matchers) }
-        ),
-        AssertionLibrary.new(
-          proc {
-            require 'spec/expectations'
-            require 'spec/runner/differs/default'
-            require 'ostruct'
-          },
-          proc { |object|
-            options = OpenStruct.new(diff_format: :unified, context_lines: 3)
-            Spec::Expectations.differ = Spec::Expectations::Differs::Default.new(options)
-            object.extend(Spec::Matchers)
-          }
-        ),
-        AssertionLibrary.new(
-          proc { require 'minitest/assertions' },
-          proc { |object| object.extend(MinitestWorld) }
-        ),
-        AssertionLibrary.new(
-          proc { require 'minitest/unit' },
-          proc { |object| object.extend(MiniTest::Assertions) }
-        ),
-        AssertionLibrary.new(
-          proc { require 'test/unit/assertions' },
-          proc { |object| object.extend(Test::Unit::Assertions) }
-        ),
+        rspec,
+        ruby_spec,
+        minitest_assertions,
+        minitest_unit,
+        minitest_unit_assertions,
         # Null assertion library must come last to prevent exceptions if unable to load a test framework
-        AssertionLibrary.new(
-          proc {},
-          proc {}
-        )
+        null
       ]
+    end
+    
+    def self.rspec
+      AssertionLibrary.new(
+        proc { require 'rspec/expectations' },
+        proc { |object| object.extend(::RSpec::Matchers) }
+      )
+    end
+
+    def self.ruby_spec
+      AssertionLibrary.new(
+        proc {
+          require 'spec/expectations'
+          require 'spec/runner/differs/default'
+          require 'ostruct'
+        },
+        proc { |object|
+          options = OpenStruct.new(diff_format: :unified, context_lines: 3)
+          Spec::Expectations.differ = Spec::Expectations::Differs::Default.new(options)
+          object.extend(Spec::Matchers)
+        }
+      )
+    end
+
+    def self.minitest_assertions
+      AssertionLibrary.new(
+        proc { require 'minitest/assertions' },
+        proc { |object| object.extend(MinitestWorld) }
+      )
+    end
+
+    def self.minitest_unit
+      AssertionLibrary.new(
+        proc { require 'minitest/unit' },
+        proc { |object| object.extend(MiniTest::Assertions) }
+      )
+    end
+
+    def self.minitest_unit_assertions
+      AssertionLibrary.new(
+        proc { require 'test/unit/assertions' },
+        proc { |object| object.extend(Test::Unit::Assertions) }
+      )
+    end
+
+    def self.null
+      AssertionLibrary.new(
+        proc {},
+        proc {}
+      )
     end
   end
 end
