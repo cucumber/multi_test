@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 This file is intended to be modified using the [`changelog`](https://github.com/cucumber/changelog) command-line tool.
 
 ## [Unreleased]
+
+## [2.0.0] - 2026-07-30
 ### Changed
 - **BREAKING CHANGE**: Upped minimum ruby from `2.0` to `2.6`
 - **BREAKING CHANGE**: Upped minimum `minitest` support from `2.0` to `5.0`
@@ -59,6 +61,7 @@ included. Ruby `2.2` removed minitest from standard library. (@tooky, @jmoody)
 - First gem release
 
 [Unreleased]: https://github.com/cucumber/multi_test/compare/1.1.0..HEAD
+[2.0.0]: https://github.com/cucumber/multi_test/compare/1.1.0..v2.0.0
 [1.1.0]: https://github.com/cucumber/multi_test/compare/1.0.0..1.1.0
 [1.0.0]: https://github.com/cucumber/multi_test/compare/v0.1.2..1.0.0
 [0.1.2]: https://github.com/cucumber/multi_test/compare/v0.1.1...v0.1.2
