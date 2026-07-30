@@ -11,7 +11,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 0 * * *"
+    - cron: '0 0 * * *' # every day at midnight UTC
 
 jobs:
   test:
@@ -19,7 +19,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        ruby: ["2.6", "2.7", "3.0", "3.1"]
+        ruby: ['2.7', '3.0', '3.1', '3.2', '3.3', '3.4', '4.0']
         gemfile: # These are duplicated from the test/gemfiles folder
           - activesupport-4
           - activesupport-5
@@ -37,14 +37,11 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-
       - name: Set up Ruby
         uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1.321.0
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: false
-
       - name: Run test scenarios
-        run: |
-          ./test-gemfile test/gemfiles/${{ matrix.gemfile }}
+        run: ./test-gemfile test/gemfiles/${{ matrix.gemfile }}
         shell: bash
