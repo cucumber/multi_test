@@ -29,23 +29,6 @@ jobs:
           - plain-ruby
           - rspec-3
           - test-unit-3
-        # Review this exclusion matrix as part of a v3 release. The goal is to remove the exclusions and
-        # test all combinations of Ruby and gemfiles.
-        exclude:
-          # ActiveSupport
-          # Unsupported versions of Ruby
-          # :none_now
-          # False failures to be Investigated
-          - gemfile: activesupport-5
-          - gemfile: activesupport-6
-          - gemfile: activesupport-7
-          - gemfile: activesupport-8
-          # MiniTest
-            # Unsupported versions of Ruby
-          # :none_now
-          # False failures to be Investigated
-          - gemfile: minitest-5
-          - gemfile: minitest-6
 
     runs-on: ubuntu-24.04
     steps:
