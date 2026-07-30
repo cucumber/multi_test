@@ -2,6 +2,6 @@
 
 set -e
 
-for gemfile in test/gemfiles/*; do
-    ./test-gemfile $gemfile
+for FOLDER in test/gemfiles/*; do
+    ./test-gemfile "$FOLDER"
 done

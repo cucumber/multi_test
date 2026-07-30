@@ -4,13 +4,10 @@ set -e
 
 GEMFILE_FOLDER=$1
 GEMFILE=$GEMFILE_FOLDER/Gemfile
-
-echo
-echo $GEMFILE
-echo
-
 SCENARIOS=$(cat $GEMFILE_FOLDER/scenarios)
 PLATFORM="$(BUNDLE_GEMFILE=$GEMFILE bundle platform)"
+
+echo
 
 if [[ "$PLATFORM" =~ "Your Ruby version is" ]]; then
     echo "$PLATFORM: Skipping"
@@ -18,13 +15,14 @@ if [[ "$PLATFORM" =~ "Your Ruby version is" ]]; then
 fi
 
 for SCENARIO in $SCENARIOS; do
-    echo "$GEMFILE_FOLDER -> Scenario: $SCENARIO"
     SCENARIO_PATH=test/scenarios/$SCENARIO
     BUNDLE_GEMFILE=$GEMFILE bundle install --quiet
     OUTPUT=$(BUNDLE_GEMFILE=$GEMFILE bundle exec ruby -I lib "$SCENARIO_PATH")
     if [[ -n "$OUTPUT" ]] && ! echo "$OUTPUT" | grep -q "0 runs, 0 assertions, 0 failures, 0 errors"; then
+        echo "$GEMFILE_FOLDER -> Scenario: $SCENARIO - FAIL"
         echo "Expected output to be empty, but was:"
         echo "$OUTPUT"
         exit 1
     fi
+    echo "$GEMFILE_FOLDER -> Scenario: $SCENARIO - PASS"
 done
