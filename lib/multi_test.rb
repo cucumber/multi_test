@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'English'
-require 'multi_test/assertion_library'
+require_relative 'multi_test/assertion_library'
+
 module MultiTest
   class << self
     # TODO: Remove in v3 (Targeting minispec and external gem removals first)

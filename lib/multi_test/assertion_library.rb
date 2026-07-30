@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'multi_test/minitest_world'
+require_relative 'minitest_world'
 
 module MultiTest
   class AssertionLibrary
