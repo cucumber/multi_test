@@ -14,15 +14,14 @@ module MultiTest
       def available
         @available ||= [
           rspec,
-          ruby_spec,
-          minitest_assertions,
-          minitest_unit,
-          minitest_unit_assertions,
+          minitest,
+          test_unit,
           # Null assertion library must come last to prevent exceptions if unable to load a test framework
           null
         ]
       end
 
+      # API is v2+
       def rspec
         AssertionLibrary.new(
           proc { require 'rspec/expectations' },
@@ -30,36 +29,17 @@ module MultiTest
         )
       end
 
-      def ruby_spec
-        AssertionLibrary.new(
-          proc {
-            require 'spec/expectations'
-            require 'spec/runner/differs/default'
-            require 'ostruct'
-          },
-          proc { |object|
-            options = OpenStruct.new(diff_format: :unified, context_lines: 3)
-            Spec::Expectations.differ = Spec::Expectations::Differs::Default.new(options)
-            object.extend(Spec::Matchers)
-          }
-        )
-      end
-
-      def minitest_assertions
+      # API is v5+
+      def minitest
         AssertionLibrary.new(
           proc { require 'minitest/assertions' },
           proc { |object| object.extend(MinitestWorld) }
         )
       end
 
-      def minitest_unit
-        AssertionLibrary.new(
-          proc { require 'minitest/unit' },
-          proc { |object| object.extend(MiniTest::Assertions) }
-        )
-      end
-
-      def minitest_unit_assertions
+      # Test::Unit (Ruby standard); API is v1.8+
+      # From v2.1+ it became the `test-unit` gem
+      def test_unit
         AssertionLibrary.new(
           proc { require 'test/unit/assertions' },
           proc { |object| object.extend(Test::Unit::Assertions) }

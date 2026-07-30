@@ -1,12 +1,10 @@
-inherit_from: .rubocop_todo.yml
-
 AllCops:
   TargetRubyVersion: 2.7
   NewCops: enable
 
-## Stylistic preference to keep dev dependencies in gemspec
-#Gemspec/DevelopmentDependencies:
-#  Enabled: false
+# Stylistic preference to keep dev dependencies in gemspec
+Gemspec/DevelopmentDependencies:
+  Enabled: false
 
 # Disabled on our repo's to enable polyglot-release
 Gemspec/RequireMFA:
