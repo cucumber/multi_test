@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
-# Imagine this is your rails app
+# After loading any app, enable the autorun functionality in minitest
 require 'minitest/autorun'
 
-# Now cucumber loads and exits successfully
+# Manually (or automatically), disable autorun
+# NB: This should (as of v2), only affect anything with test-unit loaded (Which it isn't here)
 require 'multi_test'
 MultiTest.disable_autorun
-exit 0
 
-# Our Minitest hook should propagate that healthy status code
+# Now anything we do should not be affected
+exit 0

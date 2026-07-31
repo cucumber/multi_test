@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 This file is intended to be modified using the [`changelog`](https://github.com/cucumber/changelog) command-line tool.
 
 ## [Unreleased]
+### Changed
+- **BREAKING CHANGE**: Upped minimum ruby from `2.6` to `3.2`
 
 ## [2.0.0] - 2026-07-30
 ### Changed
