@@ -15,7 +15,7 @@ if [[ "$PLATFORM" =~ "Your Ruby version is" ]]; then
 fi
 
 for SCENARIO in $SCENARIOS; do
-    SCENARIO_PATH=test/scenarios/$SCENARIO
+    SCENARIO_PATH=test/$SCENARIO
     BUNDLE_GEMFILE=$GEMFILE bundle install --quiet
     OUTPUT=$(BUNDLE_GEMFILE=$GEMFILE bundle exec ruby -I lib "$SCENARIO_PATH")
     if [[ -n "$OUTPUT" ]] && ! echo "$OUTPUT" | grep -q "0 runs, 0 assertions, 0 failures, 0 errors"; then
