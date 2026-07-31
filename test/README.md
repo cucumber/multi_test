@@ -1,19 +1,25 @@
 # How this gem is tested
 
-We build a matrix of test cases from the gemfiles and scenarios directories.
+We build a matrix of test cases from the gemfile directories.
 
-The gemfiles contain each of the different gem configurations we want to test with. Then, for each gemfile, there's a scenarios file which lists the Ruby scripts from the scenarios directory that we'll run as tests in that gemfile's environment.
+Each folder contains each of the different gem configurations we want to test with. Then, for each gemfile, there's a
+`scenarios` file which lists the individual ruby scripts we wish to test in that gemfile's environment.
 
 Success for each test case is:
-1. nothing was written to standard output
-2. the Ruby script exited with status 0 (i.e. no exception was raised)
+1. Nothing unexpected was written to standard output
+2. The ruby script exited with status 0 (i.e. no exception was raised)
 
 ## Running tests
 
 Use this command (from the root) to run all the tests:
 
-		./test-all
+```shell
+./test-all
+```
 
 Use this command to run a specific Gemfile's scenarios:
 
-		./test-gemfile test/gemfile/<gemfile folder>
+```shell
+# Run scenarios just for rspec-3
+./test-gemfile test/gemfile/rspec-3
+```
