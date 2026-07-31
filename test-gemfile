@@ -5,14 +5,8 @@ set -e
 GEMFILE_FOLDER=$1
 GEMFILE=$GEMFILE_FOLDER/Gemfile
 SCENARIOS=$(cat $GEMFILE_FOLDER/scenarios)
-PLATFORM="$(BUNDLE_GEMFILE=$GEMFILE bundle platform)"
 
 echo
-
-if [[ "$PLATFORM" =~ "Your Ruby version is" ]]; then
-    echo "$PLATFORM: Skipping"
-    exit 0
-fi
 
 for SCENARIO in $SCENARIOS; do
     SCENARIO_PATH=test/$SCENARIO
