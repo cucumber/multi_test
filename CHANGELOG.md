@@ -62,10 +62,10 @@ included. Ruby `2.2` removed minitest from standard library. (@tooky, @jmoody)
 ### Changed
 - First gem release
 
-[Unreleased]: https://github.com/cucumber/multi_test/compare/1.1.0..HEAD
-[2.0.0]: https://github.com/cucumber/multi_test/compare/1.1.0..v2.0.0
-[1.1.0]: https://github.com/cucumber/multi_test/compare/1.0.0..1.1.0
-[1.0.0]: https://github.com/cucumber/multi_test/compare/v0.1.2..1.0.0
+[Unreleased]: https://github.com/cucumber/multi_test/compare/v2.0.0..HEAD
+[2.0.0]: https://github.com/cucumber/multi_test/compare/v1.1.0..v2.0.0
+[1.1.0]: https://github.com/cucumber/multi_test/compare/v1.0.0..v1.1.0
+[1.0.0]: https://github.com/cucumber/multi_test/compare/v0.1.2..v1.0.0
 [0.1.2]: https://github.com/cucumber/multi_test/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/cucumber/multi_test/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/cucumber/multi_test/compare/v0.0.3...v0.1.0
