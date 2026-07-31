@@ -9,15 +9,15 @@ This file is intended to be modified using the [`changelog`](https://github.com/
 
 ## [Unreleased]
 ### Changed
-- **BREAKING CHANGE**: Upped minimum ruby from `2.6` to `3.2`
+- **BREAKING CHANGE**: Upped minimum ruby from `2.6` to `3.2` ([#100](https://github.com/cucumber/multi_test/issues/100))
 
 ## [2.0.0] - 2026-07-30
 ### Changed
-- **BREAKING CHANGE**: Upped minimum ruby from `2.0` to `2.6`
+- **BREAKING CHANGE**: Upped minimum ruby from `2.0` to `2.6` ([#97](https://github.com/cucumber/multi_test/issues/97))
 - **BREAKING CHANGE**: Upped minimum `minitest` support from `2.0` to `5.0`
 - **BREAKING CHANGE**: Removed all minitest autorun shims
 - **BREAKING CHANGE**: Upped minimum `rspec` support from `1.0` to `2.0`
-- Ran a full aggressive rubocop audit on code to refactor into more modern ruby style
+- Ran a full aggressive rubocop audit on code to refactor into more modern ruby style ([#97](https://github.com/cucumber/multi_test/issues/97))
 
 ### Fixed
 - Partially fixed the local execution of tests by not complaining when test frameworks output boilerplate responses
