@@ -8,9 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 This file is intended to be modified using the [`changelog`](https://github.com/cucumber/changelog) command-line tool.
 
 ## [Unreleased]
+### Added
+- Established minimum support for `test-unit` of `3.4` and above
+
 ### Changed
 - **BREAKING CHANGE**: Upped minimum ruby from `2.6` to `3.2` ([#100](https://github.com/cucumber/multi_test/issues/100))
 - Did a full restructure of the repo in line with other cucumber repos
+
+### Removed
+- `MultiTest.disable_autorun` has been removed as it no longer impacts `test-unit` in v3+
 
 ## [2.0.0] - 2026-07-30
 ### Changed
