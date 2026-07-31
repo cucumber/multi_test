@@ -19,7 +19,7 @@ jobs:
       fail-fast: false
       matrix:
         ruby: ['3.2', '3.3', '3.4', '4.0']
-        gemfile: # These are duplicated from the test/gemfiles folder
+        gemfile:
           - activesupport-5
           - activesupport-6
           - activesupport-7
@@ -41,5 +41,5 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: false
       - name: Run test scenarios
-        run: ./test-gemfile test/gemfiles/${{ matrix.gemfile }}
+        run: ./test-gemfile ./gemfiles/${{ matrix.gemfile }}
         shell: bash
