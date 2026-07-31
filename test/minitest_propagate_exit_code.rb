@@ -3,6 +3,7 @@
 # After loading any app, enable the autorun functionality in minitest
 require 'minitest/autorun'
 
+# TODO: After v3 rename the functionality / comment here
 # Autorun disablement from MultiTest is no longer touching supported `test-unit` code via the legacy runner.
 # So we just check that calling our code doesn't break anything
 require 'multi_test'
