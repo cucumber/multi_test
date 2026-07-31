@@ -3,10 +3,10 @@
 # After loading any app, enable the autorun functionality in active_support
 require 'active_support/testing/autorun'
 
-# Manually (or automatically), disable autorun
-# NB: This should (as of v2), only affect anything with test-unit loaded (Which it isn't here)
+# Autorun disablement from MultiTest is no longer touching supported `test-unit` code via the legacy runner.
+# So we just check that calling our code doesn't break anything
 require 'multi_test'
-MultiTest.disable_autorun
+MultiTest.extend_with_best_assertion_library(self)
 
 # Now anything we do should not be affected
 exit 0
