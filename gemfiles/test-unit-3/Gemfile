@@ -2,5 +2,4 @@
 
 source 'https://rubygems.org'
 
-# TODO: Bump in v3 (Target a high end conformance, probably remove in v4)
-gem 'test-unit', '~> 3.0'
+gem 'test-unit', '~> 3.4'

@@ -20,10 +20,10 @@ jobs:
       matrix:
         ruby: ['3.2', '3.3', '3.4', '4.0']
         gemfile:
-          - activesupport-5
-          - activesupport-6
-          - activesupport-7
-          - activesupport-8
+          - activesupport-7-0
+          - activesupport-7-1
+          - activesupport-7-2
+          - activesupport-8-0
           - minitest-5
           - minitest-6
           - plain-ruby
