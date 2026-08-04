@@ -5,7 +5,7 @@ require_relative 'minitest_world'
 class MultiTest
   class << self
     def extend_with_best_assertion_library(object)
-      available.detect(&:require?).extend_world(object)
+      available.detect(&:require?)&.extend_world(object)
     end
 
     private
@@ -14,9 +14,7 @@ class MultiTest
       @available ||= [
         rspec,
         minitest,
-        test_unit,
-        # Null assertion library must come last to prevent exceptions if unable to load a test framework
-        null
+        test_unit
       ]
     end
 
@@ -42,13 +40,6 @@ class MultiTest
       new(
         proc { require 'test/unit/assertions' },
         proc { |object| object.extend(Test::Unit::Assertions) }
-      )
-    end
-
-    def null
-      new(
-        proc {},
-        proc {}
       )
     end
   end
