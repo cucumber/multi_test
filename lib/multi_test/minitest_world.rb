@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module MultiTest
+class MultiTest
   module MinitestWorld
     def self.extended(base)
       base.extend(Minitest::Assertions)

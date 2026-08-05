@@ -14,6 +14,7 @@ This file is intended to be modified using the [`changelog`](https://github.com/
 ### Changed
 - **BREAKING CHANGE**: Upped minimum ruby from `2.6` to `3.2` ([#100](https://github.com/cucumber/multi_test/issues/100))
 - Did a full restructure of the repo in line with other cucumber repos ([#101](https://github.com/cucumber/multi_test/issues/101))
+- Internal breaking change to reduce code overhead and use new ruby idioms (Should be no impact to users)
 
 ### Removed
 - `MultiTest.disable_autorun` has been removed as it no longer impacts `test-unit` in v3+
