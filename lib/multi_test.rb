@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'minitest_world'
+require_relative 'multi_test/minitest_world'
 
 class MultiTest
   class << self
@@ -18,7 +18,7 @@ class MultiTest
       ]
     end
 
-    # API is v2+
+    # Supported API is v2+
     def rspec
       new(
         proc { require 'rspec/expectations' },
@@ -26,16 +26,16 @@ class MultiTest
       )
     end
 
-    # API is v5+
+    # Supported API is v5+
     def minitest
       new(
         proc { require 'minitest/assertions' },
-        proc { |object| object.extend(MinitestWorld) }
+        proc { |object| object.extend(MultiTest::MinitestWorld) }
       )
     end
 
-    # Test::Unit (Ruby standard); API is v1.8+
-    # From v2.1+ it became the `test-unit` gem
+    # Test::Unit (Ruby standard); From v2.1+ it became the `test-unit` gem
+    # Supported API is v3.4+
     def test_unit
       new(
         proc { require 'test/unit/assertions' },
