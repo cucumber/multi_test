@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 3.2.0'
   s.required_rubygems_version = '>= 3.2.8'
 
-  s.add_development_dependency('rubocop', '~> 1.88.2')
+  s.add_development_dependency('rubocop', '~> 1.92.0')
   s.add_development_dependency('rubocop-performance', '~> 1.26.1')
 
   s.require_path     = 'lib'
